@@ -7,13 +7,12 @@ import java.util.stream.IntStream;
 public class MergeSort {
 	private static void merge(int[] array, int startIndex, int pivotIndex, int endIndex) {
 		int numberOfElementsToSort = 1 + endIndex - startIndex; // Need to add 1 since this is a count rather than an index
-		
-		int leftStart = startIndex;
-		int rightStart = pivotIndex+1;
-
 		ArrayList<Integer> temp = new ArrayList<>(numberOfElementsToSort); // Temporary array to hold sorted sub-array
 		
-		while(leftStart <= pivotIndex && rightStart <= endIndex) {// While we have both left and right halves of the array
+		int leftStart = startIndex; // start of left sub-array (start to pivot)
+		int rightStart = pivotIndex+1; // start of right sub-array (pivot + 1 to end)
+		
+		while(leftStart <= pivotIndex && rightStart <= endIndex) {// While we have both left and right halves of the array, take the minimum and advance indices in respective direction
 			if(array[leftStart] <= array[rightStart])
 				temp.add(array[leftStart++]);
 			else

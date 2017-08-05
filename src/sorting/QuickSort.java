@@ -5,7 +5,7 @@ public class QuickSort {
 	
 	private static int partition(int[] array, int startIndex, int endIndex, int pivot) {
 		while(startIndex <= endIndex) { // While start/end indexes have not overlapped
-
+			
 			while(array[startIndex] < pivot) // Move forward the startIndex until we find a value that is less than the pivot
 				startIndex++;
 			
