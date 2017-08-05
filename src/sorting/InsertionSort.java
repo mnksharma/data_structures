@@ -15,6 +15,6 @@ public class InsertionSort {
 		util.Util.print(a);
 		sort(a, 0, a.length - 1);
 		util.Util.print(a);
-		System.out.println("Quick sorting complete");
+		System.out.println("Insertion sort complete");
 	}
 }

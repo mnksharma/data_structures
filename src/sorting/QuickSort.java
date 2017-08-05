@@ -37,6 +37,6 @@ public class QuickSort {
 		print(a);
 		sort(a, 0, a.length - 1);
 		print(a);
-		System.out.println("Quick sorting complete");
+		System.out.println("Quick sort complete");
 	}
 }

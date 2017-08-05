@@ -45,6 +45,6 @@ public class MergeSort {
 		print(a);
 		sort(a, 0, a.length - 1);
 		print(a);
-		System.out.println("Sorting complete");
+		System.out.println("Merge sort complete");
 	}
 }
