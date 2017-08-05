@@ -35,10 +35,10 @@ public class MergeSort {
 		if (endIndex <= startIndex) // Guarding against indexes overlapping which will result in infinite recursion
 			return;
 
-		int pivotIndex = (startIndex + endIndex) / 2;
-		sort(array, startIndex, pivotIndex);
-		sort(array, pivotIndex + 1, endIndex);
-		merge(array, startIndex, pivotIndex, endIndex);
+		int pivotIndex = (startIndex + endIndex) / 2; // Find the pivot index (mid-point of the array)
+		sort(array, startIndex, pivotIndex); // Recursive sort left sub-array
+		sort(array, pivotIndex + 1, endIndex); // Recursively sort right sub-array
+		merge(array, startIndex, pivotIndex, endIndex); // Merge the two sorted sub-arrays
 	}
 
 	public static void main(String[] args) {

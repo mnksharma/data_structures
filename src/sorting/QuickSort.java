@@ -11,8 +11,7 @@ public class QuickSort {
 			
 			while(array[endIndex] > pivot) // Move backward the endIndex until we find a value greater than the pivot
 				endIndex--;
-			util.Util.print(array);
-
+			
 			if(startIndex <= endIndex) { // If we found something and start/end indexes don't overlap then swap the values
 				swap(array, startIndex, endIndex);
 				startIndex++;
@@ -23,15 +22,14 @@ public class QuickSort {
 	}
 	
 	public static void sort(int[] array, int startIndex, int endIndex) {
-		if (endIndex <= startIndex) { // Guarding against indexes overlapping which will result in infinite recursion
+		if (endIndex <= startIndex) // Guarding against indexes overlapping which will result in infinite recursion
 			return;
-		}
 		
-		int pivot = array[(startIndex + endIndex) / 2];
+		int pivot = array[(startIndex + endIndex) / 2]; // Find the pivot (middle value of the array)
 	
-		int partitionIndex = partition(array, startIndex, endIndex, pivot);
-		sort(array, startIndex, partitionIndex - 1);
-		sort(array, partitionIndex, endIndex);
+		int partitionIndex = partition(array, startIndex, endIndex, pivot); // Find the partition (rough mid-point of the array)
+		sort(array, startIndex, partitionIndex - 1); // Recursively sort the left sub-array
+		sort(array, partitionIndex, endIndex); // Recursively sort the right sub-array
 	}
 
 	public static void main(String[] args) {
